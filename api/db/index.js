@@ -12,6 +12,8 @@ if (debug) {
 	connection_string = process.env.MONGO_CONNECTION_STRING_PROD;
 }
 
+console.log(connection_string);
+
 mongoose.connect(connection_string, {
 		useUnifiedTopology: true,
 		useNewUrlParser: true

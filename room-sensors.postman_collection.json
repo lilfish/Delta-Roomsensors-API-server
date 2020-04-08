@@ -1,0 +1,1437 @@
+{
+	"info": {
+		"_postman_id": "d12dc9f2-54bb-4d1a-9e76-9d9d9860558e",
+		"name": "room-sensors",
+		"description": "Room sensor api tests\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Real routes",
+			"item": [
+				{
+					"name": "Get groups",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/real",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"real"
+							]
+						},
+						"description": "Get all groups\t"
+					},
+					"response": []
+				},
+				{
+					"name": "Get group",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/real/test",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"real",
+								"test"
+							]
+						},
+						"description": "Get one group with data\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Post new group",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "group",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "valueType",
+									"value": "Number",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/real",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"real"
+							]
+						},
+						"description": "Post a new group"
+					},
+					"response": []
+				},
+				{
+					"name": "Post data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[\"2\", \"3\", \"43\", \"2\"]",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/real/test",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"real",
+								"test"
+							],
+							"query": [
+								{
+									"key": "data",
+									"value": "test",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Post data to a group"
+					},
+					"response": []
+				},
+				{
+					"name": "Update group",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "groupName",
+									"value": "test",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/real/test2/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"real",
+								"test2",
+								""
+							]
+						},
+						"description": "Update a group name or value type"
+					},
+					"response": []
+				},
+				{
+					"name": "Update data field",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "value",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/real/test/5e8cccf3d20b3a12e4d118a6",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"real",
+								"test",
+								"5e8cccf3d20b3a12e4d118a6"
+							]
+						},
+						"description": "Update a data field from a group"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete group",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/real/test",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"real",
+								"test"
+							]
+						},
+						"description": "Delete a group and all data objects"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Data object",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/real/test/5e8cdfb270c9cc53507df47c",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"real",
+								"test",
+								"5e8cdfb270c9cc53507df47c"
+							]
+						},
+						"description": "Deleta a data object of a group"
+					},
+					"response": []
+				}
+			],
+			"description": "Test request for the \"real\" data route of the room-sensor project",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Fake routes",
+			"item": [
+				{
+					"name": "Get groups",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/fake",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fake"
+							]
+						},
+						"description": "Get all groups\t"
+					},
+					"response": []
+				},
+				{
+					"name": "Get group",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/fake/waefewafawf",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fake",
+								"waefewafawf"
+							]
+						},
+						"description": "Get one group with data\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Post new group",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "group",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "valueType",
+									"value": "Number",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/fake",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fake"
+							]
+						},
+						"description": "Post a new group"
+					},
+					"response": []
+				},
+				{
+					"name": "Post data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[\"2\", \"3\", \"43\", \"2\"]",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/fake/test",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fake",
+								"test"
+							],
+							"query": [
+								{
+									"key": "data",
+									"value": "test",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Post data to a group"
+					},
+					"response": []
+				},
+				{
+					"name": "Update group",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "groupName",
+									"value": "test",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/fake/test/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fake",
+								"test",
+								""
+							]
+						},
+						"description": "Update a group name or value type"
+					},
+					"response": []
+				},
+				{
+					"name": "Update data field",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{url}}/fake/test/123",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fake",
+								"test",
+								"123"
+							]
+						},
+						"description": "Update a data field from a group"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete group",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/fake/\"peopleInside\"",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fake",
+								"\"peopleInside\""
+							]
+						},
+						"description": "Delete a group and all data objects"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Data object",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/fake/test/5e8cdfb270c9cc53507df47c",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fake",
+								"test",
+								"5e8cdfb270c9cc53507df47c"
+							]
+						},
+						"description": "Deleta a data object of a group"
+					},
+					"response": []
+				},
+				{
+					"name": "Generate fake int",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "createGroup",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "groupName",
+									"value": "peopleInside",
+									"type": "text"
+								},
+								{
+									"key": "minVal",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "maxVal",
+									"value": "40",
+									"type": "text"
+								},
+								{
+									"key": "beginDate",
+									"value": "01-01-2020",
+									"type": "text"
+								},
+								{
+									"key": "endDate",
+									"value": "01-03-2020",
+									"type": "text"
+								},
+								{
+									"key": "recordCount",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "beginTime",
+									"value": "22:00",
+									"type": "text"
+								},
+								{
+									"key": "endTime",
+									"value": "23:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/fake/generateInt",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fake",
+								"generateInt"
+							]
+						},
+						"description": "Deleta a data object of a group"
+					},
+					"response": []
+				},
+				{
+					"name": "Generate fake Float",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "createGroup",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "groupName",
+									"value": "waefewafawf",
+									"type": "text"
+								},
+								{
+									"key": "minVal",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "maxVal",
+									"value": "40",
+									"type": "text"
+								},
+								{
+									"key": "beginDate",
+									"value": "01-01-2020",
+									"type": "text"
+								},
+								{
+									"key": "endDate",
+									"value": "01-03-2020",
+									"type": "text"
+								},
+								{
+									"key": "recordCount",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "beginTime",
+									"value": "22:00",
+									"type": "text"
+								},
+								{
+									"key": "endTime",
+									"value": "23:00",
+									"type": "text"
+								},
+								{
+									"key": "decimals",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/fake/generateFloat",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fake",
+								"generateFloat"
+							]
+						},
+						"description": "Deleta a data object of a group"
+					},
+					"response": []
+				},
+				{
+					"name": "Generate fake String",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "createGroup",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "groupName",
+									"value": "ewafewaf",
+									"type": "text"
+								},
+								{
+									"key": "beginDate",
+									"value": "01-01-2020",
+									"type": "text"
+								},
+								{
+									"key": "endDate",
+									"value": "01-03-2020",
+									"type": "text"
+								},
+								{
+									"key": "recordCount",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "beginTime",
+									"value": "22:00",
+									"type": "text"
+								},
+								{
+									"key": "endTime",
+									"value": "23:00",
+									"type": "text"
+								},
+								{
+									"key": "words[0]",
+									"value": "kaas",
+									"type": "text"
+								},
+								{
+									"key": "words[1]",
+									"value": "yeay",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/fake/generateString",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fake",
+								"generateString"
+							]
+						},
+						"description": "Deleta a data object of a group"
+					},
+					"response": []
+				},
+				{
+					"name": "Generate fake Booleans",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "createGroup",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "groupName",
+									"value": "xyz",
+									"type": "text"
+								},
+								{
+									"key": "words",
+									"value": "[\"kaas\",\"yeay\",\"hoi\"]",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "beginDate",
+									"value": "01-01-2020",
+									"type": "text"
+								},
+								{
+									"key": "endDate",
+									"value": "01-03-2020",
+									"type": "text"
+								},
+								{
+									"key": "recordCount",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "beginTime",
+									"value": "22:00",
+									"type": "text"
+								},
+								{
+									"key": "endTime",
+									"value": "23:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/fake/generateBoolean",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fake",
+								"generateBoolean"
+							]
+						},
+						"description": "Deleta a data object of a group"
+					},
+					"response": []
+				}
+			],
+			"description": "Test request for the \"real\" data route of the room-sensor project",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Real routes Real url",
+			"item": [
+				{
+					"name": "Get groups",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{realurl}}/real",
+							"host": [
+								"{{realurl}}"
+							],
+							"path": [
+								"real"
+							]
+						},
+						"description": "Get all groups\t"
+					},
+					"response": []
+				},
+				{
+					"name": "Get group",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{realurl}}/real/test",
+							"host": [
+								"{{realurl}}"
+							],
+							"path": [
+								"real",
+								"test"
+							]
+						},
+						"description": "Get one group with data\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Post new group",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "group",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "valueType",
+									"value": "Number",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{realurl}}/real",
+							"host": [
+								"{{realurl}}"
+							],
+							"path": [
+								"real"
+							]
+						},
+						"description": "Post a new group"
+					},
+					"response": []
+				},
+				{
+					"name": "Post data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[\"2\", \"3\", \"43\", \"2\"]",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{realurl}}/real/test",
+							"host": [
+								"{{realurl}}"
+							],
+							"path": [
+								"real",
+								"test"
+							],
+							"query": [
+								{
+									"key": "data",
+									"value": "test",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Post data to a group"
+					},
+					"response": []
+				},
+				{
+					"name": "Update group",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "groupName",
+									"value": "test",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{realurl}}/real/test2/",
+							"host": [
+								"{{realurl}}"
+							],
+							"path": [
+								"real",
+								"test2",
+								""
+							]
+						},
+						"description": "Update a group name or value type"
+					},
+					"response": []
+				},
+				{
+					"name": "Update data field",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "value",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{realurl}}/real/test/5e8cccf3d20b3a12e4d118a6",
+							"host": [
+								"{{realurl}}"
+							],
+							"path": [
+								"real",
+								"test",
+								"5e8cccf3d20b3a12e4d118a6"
+							]
+						},
+						"description": "Update a data field from a group"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete group",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{realurl}}/real/test",
+							"host": [
+								"{{realurl}}"
+							],
+							"path": [
+								"real",
+								"test"
+							]
+						},
+						"description": "Delete a group and all data objects"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Data object",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{realurl}}/real/test/5e8cdfb270c9cc53507df47c",
+							"host": [
+								"{{realurl}}"
+							],
+							"path": [
+								"real",
+								"test",
+								"5e8cdfb270c9cc53507df47c"
+							]
+						},
+						"description": "Deleta a data object of a group"
+					},
+					"response": []
+				}
+			],
+			"description": "Test request for the \"real\" data route of the room-sensor project",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Fake routes Real url",
+			"item": [
+				{
+					"name": "Get groups",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{realurl}}/fake",
+							"host": [
+								"{{realurl}}"
+							],
+							"path": [
+								"fake"
+							]
+						},
+						"description": "Get all groups\t"
+					},
+					"response": []
+				},
+				{
+					"name": "Get group",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{realurl}}/fake/waefewafawf",
+							"host": [
+								"{{realurl}}"
+							],
+							"path": [
+								"fake",
+								"waefewafawf"
+							]
+						},
+						"description": "Get one group with data\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Post new group",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "group",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "valueType",
+									"value": "Number",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{realurl}}/fake",
+							"host": [
+								"{{realurl}}"
+							],
+							"path": [
+								"fake"
+							]
+						},
+						"description": "Post a new group"
+					},
+					"response": []
+				},
+				{
+					"name": "Post data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[\"2\", \"3\", \"43\", \"2\"]",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{realurl}}/fake/test",
+							"host": [
+								"{{realurl}}"
+							],
+							"path": [
+								"fake",
+								"test"
+							],
+							"query": [
+								{
+									"key": "data",
+									"value": "test",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Post data to a group"
+					},
+					"response": []
+				},
+				{
+					"name": "Update group",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "groupName",
+									"value": "test",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{realurl}}/fake/test/",
+							"host": [
+								"{{realurl}}"
+							],
+							"path": [
+								"fake",
+								"test",
+								""
+							]
+						},
+						"description": "Update a group name or value type"
+					},
+					"response": []
+				},
+				{
+					"name": "Update data field",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{realurl}}/fake/test/123",
+							"host": [
+								"{{realurl}}"
+							],
+							"path": [
+								"fake",
+								"test",
+								"123"
+							]
+						},
+						"description": "Update a data field from a group"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete group",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{realurl}}/fake/\"peopleInside\"",
+							"host": [
+								"{{realurl}}"
+							],
+							"path": [
+								"fake",
+								"\"peopleInside\""
+							]
+						},
+						"description": "Delete a group and all data objects"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Data object",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{realurl}}/fake/test/5e8cdfb270c9cc53507df47c",
+							"host": [
+								"{{realurl}}"
+							],
+							"path": [
+								"fake",
+								"test",
+								"5e8cdfb270c9cc53507df47c"
+							]
+						},
+						"description": "Deleta a data object of a group"
+					},
+					"response": []
+				},
+				{
+					"name": "Generate fake int",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "createGroup",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "groupName",
+									"value": "peopleInside",
+									"type": "text"
+								},
+								{
+									"key": "minVal",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "maxVal",
+									"value": "40",
+									"type": "text"
+								},
+								{
+									"key": "beginDate",
+									"value": "01-01-2020",
+									"type": "text"
+								},
+								{
+									"key": "endDate",
+									"value": "01-03-2020",
+									"type": "text"
+								},
+								{
+									"key": "recordCount",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "beginTime",
+									"value": "22:00",
+									"type": "text"
+								},
+								{
+									"key": "endTime",
+									"value": "23:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{realurl}}/fake/generateInt",
+							"host": [
+								"{{realurl}}"
+							],
+							"path": [
+								"fake",
+								"generateInt"
+							]
+						},
+						"description": "Deleta a data object of a group"
+					},
+					"response": []
+				},
+				{
+					"name": "Generate fake Float",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "createGroup",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "groupName",
+									"value": "waefewafawf",
+									"type": "text"
+								},
+								{
+									"key": "minVal",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "maxVal",
+									"value": "40",
+									"type": "text"
+								},
+								{
+									"key": "beginDate",
+									"value": "01-01-2020",
+									"type": "text"
+								},
+								{
+									"key": "endDate",
+									"value": "01-03-2020",
+									"type": "text"
+								},
+								{
+									"key": "recordCount",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "beginTime",
+									"value": "22:00",
+									"type": "text"
+								},
+								{
+									"key": "endTime",
+									"value": "23:00",
+									"type": "text"
+								},
+								{
+									"key": "decimals",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{realurl}}/fake/generateFloat",
+							"host": [
+								"{{realurl}}"
+							],
+							"path": [
+								"fake",
+								"generateFloat"
+							]
+						},
+						"description": "Deleta a data object of a group"
+					},
+					"response": []
+				},
+				{
+					"name": "Generate fake String",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "createGroup",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "groupName",
+									"value": "ewafewaf",
+									"type": "text"
+								},
+								{
+									"key": "beginDate",
+									"value": "01-01-2020",
+									"type": "text"
+								},
+								{
+									"key": "endDate",
+									"value": "01-03-2020",
+									"type": "text"
+								},
+								{
+									"key": "recordCount",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "beginTime",
+									"value": "22:00",
+									"type": "text"
+								},
+								{
+									"key": "endTime",
+									"value": "23:00",
+									"type": "text"
+								},
+								{
+									"key": "words[0]",
+									"value": "kaas",
+									"type": "text"
+								},
+								{
+									"key": "words[1]",
+									"value": "yeay",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{realurl}}/fake/generateString",
+							"host": [
+								"{{realurl}}"
+							],
+							"path": [
+								"fake",
+								"generateString"
+							]
+						},
+						"description": "Deleta a data object of a group"
+					},
+					"response": []
+				},
+				{
+					"name": "Generate fake Booleans",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "createGroup",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "groupName",
+									"value": "xyz",
+									"type": "text"
+								},
+								{
+									"key": "words",
+									"value": "[\"kaas\",\"yeay\",\"hoi\"]",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "beginDate",
+									"value": "01-01-2020",
+									"type": "text"
+								},
+								{
+									"key": "endDate",
+									"value": "01-03-2020",
+									"type": "text"
+								},
+								{
+									"key": "recordCount",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "beginTime",
+									"value": "22:00",
+									"type": "text"
+								},
+								{
+									"key": "endTime",
+									"value": "23:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{realurl}}/fake/generateBoolean",
+							"host": [
+								"{{realurl}}"
+							],
+							"path": [
+								"fake",
+								"generateBoolean"
+							]
+						},
+						"description": "Deleta a data object of a group"
+					},
+					"response": []
+				}
+			],
+			"description": "Test request for the \"real\" data route of the room-sensor project",
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "44a6aa10-2f33-42f8-82cc-183eb2378fc5",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "e3211243-d924-42d3-98e3-8d54e20de70d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "be413bff-9873-4dae-9c3a-ce3e9d3e7b40",
+			"key": "url",
+			"value": "localhost:42069",
+			"type": "string"
+		},
+		{
+			"id": "837ad35b-9130-4320-a6bc-db01ccc93915",
+			"key": "realurl",
+			"value": "http://173.249.12.137:42069",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

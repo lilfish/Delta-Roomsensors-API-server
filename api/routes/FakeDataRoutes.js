@@ -8,6 +8,7 @@ import {
 
 module.exports = function (app) {
 	app.post('/fake/generateInt', fakeDataChecker, FakeDataController.generateInt)
+	app.post('/fake/generateString', fakeDataChecker, FakeDataController.generateString)
 
 	app.get('/fake', fakeDataChecker, FakeDataController.getGroups)
 	app.get('/fake/:group', fakeDataChecker, FakeDataController.getData)

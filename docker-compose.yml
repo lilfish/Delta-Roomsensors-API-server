@@ -22,6 +22,8 @@ services:
   rs_mongodb:
     image: mongo:latest
     container_name: "rs_mongodb"
+    networks:
+      - roomsensor_bridge
     environment:
       MONGO_INITDB_ROOT_USERNAME: roomsensors
       MONGO_INITDB_ROOT_PASSWORD: AGnKOyUisUwI5PStZKjXvaRmzJEtUmwk

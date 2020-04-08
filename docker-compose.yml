@@ -16,9 +16,9 @@ services:
     networks:
       - roomsensor_bridge
     links:
-        - mongodb
+        - rs_mongodb
     depends_on:
-        - mongodb
+        - rs_mongodb
   rs_mongodb:
     image: mongo:latest
     container_name: "rs_mongodb"

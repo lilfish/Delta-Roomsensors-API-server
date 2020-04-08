@@ -1,0 +1,5 @@
+PORT=42069
+DEBUG_MODE=true
+
+MONGO_CONNECTION_STRING_DEBUG=mongodb://localhost:27017/roomsensor
+MONGO_CONNECTION_STRING_PROD=mongodb://paaspopadminaccount:J836jlXcJW2JgLDQdiBz@mongodb:27017

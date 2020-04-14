@@ -26,10 +26,10 @@ services:
       - roomsensor_bridge
     command: [--auth]
     environment:
-      - MONGODB_USERNAME=roomsensors
-      - MONGODB_PASSWORD=AGnKOyUisUwI5PStZKjXvaRmzJEtUmwk
-      - MONGODB_DATABASE=roomsensors
+      MONGO_INITDB_ROOT_USERNAME: roomsensors
+      MONGO_INITDB_ROOT_PASSWORD: AGnKOyUisUwI5PStZKjXvaRmzJEtUmwk
+      MONGO_INITDB_DATABASE: roomsensors
     volumes:
       - ./data/db:/data/db
     ports:
-        - 27018:27018
+        - 27018:27017

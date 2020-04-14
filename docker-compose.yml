@@ -30,7 +30,6 @@ services:
       MONGO_INITDB_ROOT_USERNAME: roomsensors
       MONGO_INITDB_ROOT_PASSWORD: AGnKOyUisUwI5PStZKjXvaRmzJEtUmwk
     volumes:
-      - mongodb:/data/db
-      - mongodb_config:/data/configdb
+      - ./data/db:/data/db
     ports:
         - 27018:27017

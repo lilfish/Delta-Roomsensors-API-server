@@ -24,12 +24,13 @@ services:
     container_name: "rs_mongodb"
     networks:
       - roomsensor_bridge
-    command: [--auth]
+    command: --port 27018 --auth
     environment:
+      MONGO_INITDB_DATABASE: roomsensors
       MONGO_INITDB_ROOT_USERNAME: roomsensors
       MONGO_INITDB_ROOT_PASSWORD: AGnKOyUisUwI5PStZKjXvaRmzJEtUmwk
-      MONGO_INITDB_DATABASE: roomsensors
     volumes:
-      - ./data/db:/data/db
+      - mongodb:/data/db
+      - mongodb_config:/data/configdb
     ports:
         - 27018:27017
